@@ -10,34 +10,41 @@ import ErrorPage from './Pages/ErrorPage/ErrorPage';
 import MealPlanPage from './Pages/MealPlanPage/MealPlanPage';
 import SummaryPage from './Pages/SummaryPage/SummaryPage';
 import ProfilePage from './Pages/ProfilePage/ProfilePage';
-import WorkoutPage from './Pages/WorkoutPage/WorkoutPage';
+import NutritionPage from './Pages/NutritionPage/NutritionPage';
+import SearchItemPage from './Pages/SearchItemPage/SearchItemPage';
 
 function App() {
 
+
   return (
-    <div className="App">
-      
-      <Router>
-        <Routes>
+      <div className="App">
+        
+        <Router>
+          <Routes>
+            
+            <Route path='/' element={<HomePage />} />
+            <Route path='/search' element={<SearchPage />} />
+            <Route path='/search/:id' element={<SearchItemPage />} />
 
-          <Route path='/' element={<HomePage />} />
-          <Route path='/search' element={<SearchPage />} />
-          <Route path='/summary' element={<SummaryPage />} />
-          <Route path='/profile' element={<ProfilePage />} />
+            <Route path='/summary' element={<SummaryPage />} />
+            <Route path='/profile' element={<ProfilePage />} />
 
-          <Route path='/workout' element={<WorkoutPage />} />
-          <Route path='/mealplan' element={<MealPlanPage />} />
+            <Route path='/nutrition' element={<NutritionPage />} />
+            <Route path='/mealplan' element={<MealPlanPage />} />
 
-          <Route path='/signup' element={<SignUpPage />} />
-          <Route path='/login' element={<LoginPage />} />
+            <Route path='/signup' element={<SignUpPage />} />
+            <Route path='/login' element={<LoginPage />} />
+            <Route path='/preferences' element={<preferencesPage />} />
 
-          <Route path='/error' element={<ErrorPage />} />
-          <Route path='*' element={<NotFoundPage />} />
+            <Route path='/error' element={<ErrorPage />} />
+            <Route path='*' element={<NotFoundPage />} />
 
-        </Routes>
-      </Router>
+          </Routes>
 
-    </div>
+          {/* <Footer /> */}
+        </Router>
+
+      </div>
   );
 }
 
