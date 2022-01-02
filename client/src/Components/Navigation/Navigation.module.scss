@@ -1,0 +1,189 @@
+$cadet: #5d737eff;
+$green-sheen: #64b6acff;
+$celeste: #c0fdfbff;
+$aero-blue: #daffefff;
+$baby-powder: #fcfffdff;
+
+
+$mint-cream: #f4fff8ff;
+$pewter-blue: #8baaadff;
+
+.Navigation {
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background-color: transparent;
+    z-index: 3;
+    transition: all 0.6s ease-out;
+}
+
+.show {
+    box-shadow: 1px 0px 2px 0px #111;
+    background-color: $baby-powder;
+    transition: all 0.6s ease-out;
+}
+
+.logoTemp {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+
+    h2 {
+        font-size: 1.4em;
+        font-weight: bold;
+        color: white;
+        margin-left: 10px;
+    }
+
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: $pewter-blue;
+    cursor: pointer;
+
+    h2 {
+        font-size: 1.4em;
+        font-weight: bold;
+        color: $cadet;
+        margin-left: 10px;
+    }
+
+}
+
+.svg {
+    cursor: pointer;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkTemp {
+    padding: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    background-image: linear-gradient(90deg,  white , $celeste);
+    background-size: 0 3px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: all 0.5s ease-out;
+}
+
+.link {
+    padding: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: $cadet;
+    // font-weight: bold;
+    font-size: 1.2em;
+    background-image: linear-gradient(90deg,  $celeste, $cadet);
+    background-size: 0 3px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: all 0.5s ease-out;
+}
+
+.active {
+    /* background-color: #5d737eff;
+    font-weight: bold;
+    color: white */
+    background-image: linear-gradient(90deg, #c0fdfbff, #5d737eff);
+    background-size: 100% 3px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: all 0.5s ease-out;
+}
+
+.activeTemp {
+    /* background-color: #5d737eff;
+    font-weight: bold;
+    color: white */
+    background-image: linear-gradient(90deg, white, $celeste);
+    background-size: 100% 3px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: all 0.5s ease-out;
+}
+
+.link:hover {
+    background-size: 100% 3px;
+    transition: all 0.5s ease-out;
+}
+
+.linkTemp:hover {
+    background-size: 100% 3px;
+    transition: all 0.5s ease-out;
+}
+
+.btnTemp {
+    padding: 10px 20px;
+    border: 3px solid white;
+    border-radius: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    transition: all 0.5s ease-out;
+}
+
+.btnTemp:hover {
+    background-color: white;
+    color: $cadet;
+    font-weight: bold;
+    transition: all 0.5s ease-out;
+}
+
+
+.btn {
+    padding: 10px 20px;
+    border: 3px solid $cadet;
+    border-radius: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: $cadet;
+    transition: all 0.5s ease-out;
+}
+
+.btn:hover {
+    background-color: $cadet;
+    color: white;
+    font-weight: bold;
+    transition: all 0.5s ease-out;
+}
+
+.btnFocusTemp {
+    background-color: white;
+    color: $cadet;
+    font-weight: bold;
+    transition: all 0.5s ease-out;
+}
+
+.btnFocus {
+    background-color: $cadet;
+    color: white;
+    font-weight: bold;
+    transition: all 0.5s ease-out;
+}
+
+.lstBtn {
+    margin-right: 0;
+}
