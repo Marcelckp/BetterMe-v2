@@ -1,0 +1,40 @@
+$cadet: #5d737eff;
+$green-sheen: #64b6acff;
+$celeste: #c0fdfbff;
+$aero-blue: #daffefff;
+$baby-powder: #fcfffdff;
+
+
+$mint-cream: #f4fff8ff;
+$pewter-blue: #8baaadff;
+
+.Hero {
+    height: 800px;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: rotate(90deg);
+    // object-fit: contain;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    
+}
+
+.titleBlock {
+    // background-color: white;
+    // filter: blur(10px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
+    width: 50%;
+    padding: 40px;
+    color: $baby-powder
+}
+
+.title {
+    font-size: 5em;
+    font-weight: bolder;
+}
