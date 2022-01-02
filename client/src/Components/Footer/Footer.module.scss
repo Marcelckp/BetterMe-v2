@@ -1,0 +1,60 @@
+.Footer {
+    background-color: #001011;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    // align-items: 
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    height: 100%
+
+    h2 {
+        font-size: 1.4em;
+        font-weight: bold;
+        color: white;
+        margin-left: 10px;
+    }
+
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+    width: 60%;
+}
+
+.head {
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+.col1, .col2, .link {
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+
+    p {
+        padding: 20px;
+    }
+}
+
+.col1 {
+    margin-right: 30px
+}
+
+.col2 {
+    margin-top: 60px
+}

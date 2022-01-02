@@ -1,0 +1,56 @@
+$cadet: #5d737eff;
+$green-sheen: #64b6acff;
+$celeste: #c0fdfbff;
+$aero-blue: #daffefff;
+$baby-powder: #fcfffdff;
+
+
+$mint-cream: #f4fff8ff;
+$pewter-blue: #8baaadff;
+
+.main {
+    width: 300px;
+    height: 350px;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 2px 2px 7px 0px rgb(17, 17, 17, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    justify-content: center;
+
+    h1 {
+        font-size: 1em;
+        text-align: center;
+        padding: 20px 10px;
+        color: $cadet
+    }
+}
+
+.img {
+    width: 95%;
+    cursor: pointer
+}
+
+.btn {
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    border: 3px solid $cadet;
+    font-weight: bold;
+    color: $cadet;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.6s ease
+}
+
+.btn:hover {
+    color: white;
+    background-color: $cadet;
+    transition: all 0.6s ease
+}
