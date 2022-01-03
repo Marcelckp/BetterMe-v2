@@ -14,7 +14,7 @@ appControllers.login = async (req, res, next) => {
     }
     if (data.rows.length > 0) {
       console.log("user exist");
-      res.cookie('user', JSON.stringify(data.rows[0]), { maxAge: 90000 , httpOnly: false });
+      res.cookie('user', JSON.stringify(data.rows[0]), { maxAge: 900000 , httpOnly: false });
       res.locals.message = "successfully logged in";
       return next();
     } else {
