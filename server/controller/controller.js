@@ -14,6 +14,7 @@ appControllers.login = async (req, res, next) => {
     }
     if (data.rows.length > 0) {
       console.log("user exist");
+      res.cookie('user', JSON.stringify(data.rows[0]), { maxAge: 90000 , httpOnly: false });
       res.locals.message = "successfully logged in";
       return next();
     } else {
@@ -45,14 +46,26 @@ appControllers.signup = async (req, res, next) => {
       await db.query(
         "INSERT INTO users (username, fullName, password, email) VALUES (($1), ($2), ($3), ($4))",
         [username, fullName, password, email],
-        (err, data) => {
+        async (err, data) => {
           if (err) {
             return next(err);
           }
           console.log("hey i inserted the user");
-          console.log(data);
-          res.locals.message = "Successfully Signed Up!";
-          return next();
+
+          await db.query(
+            "SELECT * FROM users WHERE username=($1)",
+            [username],
+            (err, data) => {
+
+              // console.log(data.rows[0]);
+
+              res.cookie('user', JSON.stringify(data.rows[0]), { maxAge: 90000 , httpOnly: false });
+              res.locals.message = "Successfully Signed Up!";
+              return next();
+
+            } 
+          );
+
         }
       );
     }
