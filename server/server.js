@@ -4,10 +4,12 @@ const cors = require("cors");
 const appControllers = require("./controller/controller.js");
 const port = 4000;
 const db = require("./db-models/db-models");
+const cookieParser = require("cookie-parser");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors({ credentials: true, origin: 'http://localhost:3000'}));
+app.use(cookieParser());
 
 const usersRouter = require("./routes/users.js");
 const favoritesRouter = require("./routes/favorites.js");
@@ -24,6 +26,11 @@ app.use("/summary", summaryRouter);
 //favorites
 
 //preferences/4/create
+
+app.get("/", function (req, res, next) {
+  // res.cookie('rememberMe', 'yes', { httpOnly: false})
+  res.status(200).send("welcome to server");
+});
 
 app.get("*", function (req, res, next) {
   res.status(301).redirect("/not-found");
