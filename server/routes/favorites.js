@@ -17,7 +17,8 @@ router.get("/:id", async (req, res) => {
 
 router.post("/:id/create", async (req, res) => {
   //WAITING FOR FOOD ID?????????
-  const { id, food_id } = req.params;
+  const { id } = req.params;
+  const { food_id } = req.body;
 
   const q = "INSERT INTO favorites (user_id, food_id) VALUES ($1,$2)";
   //WAITING FOR FOOD ID?????????
@@ -32,7 +33,8 @@ router.post("/:id/create", async (req, res) => {
 
 router.delete("/:id/delete", async (req, res) => {
   //WAITING FOR FOOD ID?????????
-  const { id, food_id } = req.params;
+  const { id } = req.params;
+  const { food_id } = req.body;
 
   const q = "DELETE FROM favorites (user_id, food_id) VALUES ($1,$2)";
   //WAITING FOR FOOD ID?????????

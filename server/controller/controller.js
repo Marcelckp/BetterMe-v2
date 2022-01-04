@@ -14,7 +14,10 @@ appControllers.login = async (req, res, next) => {
     }
     if (data.rows.length > 0) {
       console.log("user exist");
-      res.cookie('user', JSON.stringify(data.rows[0]), { maxAge: 900000 , httpOnly: false });
+      res.cookie("user", JSON.stringify(data.rows[0]), {
+        maxAge: 900000,
+        httpOnly: false,
+      });
       res.locals.message = "successfully logged in";
       return next();
     } else {
@@ -28,6 +31,45 @@ appControllers.signup = async (req, res, next) => {
   const { fullName, username, password, email } = req.body;
   console.log("here is the username: ", username);
   console.log("type of username: ", typeof username);
+
+  //create an empty object
+  const validationErrors = {};
+  // conditionals to check if entries are formatted correctly, if incorrect, add message to validationErrors object
+  // if username is empty/less than x characters
+  if (username.length === 0) {
+    validationErrors.username = "username is required";
+  } else if (username.length < 6) {
+    validationErrors.username = "Username must be min 6 characters";
+  } else if (username.length > 20) {
+    validationErrors.username = "Username must be max 20 characters";
+  }
+
+  // if fullName is empty
+
+  if (fullName.length === 0) {
+    validationErrors.fullName = "Please enter your full name.";
+  }
+  // if password is empty/less than x characters
+  if (password.length === 0) {
+    validationErrors.password = "Please enter your password.";
+  } else if (password.length < 6) {
+    validationErrors.password = "Password must be min 6 characters";
+  }
+
+  if (email.length === 0) {
+    validationErrors.email = "Please enter an email address";
+  } else {
+    let regex = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
+    if (regex.test(email) === false) {
+      validationErrors.email = "Please enter a valid email address";
+    }
+  }
+  // if email is not correctly formatted as email address
+
+  if (validationErrors !== {}) {
+    res.locals.validationErrors = validationErrors;
+    return next();
+  }
 
   const q = "SELECT * FROM users WHERE username=($1) OR email=($2)";
 
@@ -56,16 +98,16 @@ appControllers.signup = async (req, res, next) => {
             "SELECT * FROM users WHERE username=($1)",
             [username],
             (err, data) => {
-
               // console.log(data.rows[0]);
 
-              res.cookie('user', JSON.stringify(data.rows[0]), { maxAge: 90000 , httpOnly: false });
+              res.cookie("user", JSON.stringify(data.rows[0]), {
+                maxAge: 90000,
+                httpOnly: false,
+              });
               res.locals.message = "Successfully Signed Up!";
               return next();
-
-            } 
+            }
           );
-
         }
       );
     }
