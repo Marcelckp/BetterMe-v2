@@ -66,7 +66,7 @@ appControllers.signup = async (req, res, next) => {
   }
   // if email is not correctly formatted as email address
 
-  if (validationErrors !== {}) {
+  if (Object.keys(validationErrors).length !== 0) {
     res.locals.validationErrors = validationErrors;
     return next();
   }

@@ -8,7 +8,7 @@ router.post("/signup", appControllers.signup, (req, res) => {
   console.log("this is error:", res.locals.error);
 
   if (res.locals.validationErrors) {
-    return res.status(400).send(res.locals.validationErrors);
+    return res.json(res.locals.validationErrors);
   }
 
   if (res.locals.message) {
@@ -43,7 +43,14 @@ router.put("/:id/updateProfile", async (req, res) => {
         return res.status(400).send("Error updating userAccountDetails");
       }
       if (result) {
-        return res.status(200).send("User Details updated successfully");
+        db.query("SELECT * from users where user_id=($1)",[id],(err,result) =>{
+          if(err) return res.status(400).send("Error in selecting updated user details");
+              res.cookie("user", JSON.stringify(result.rows[0]), {
+                maxAge: 900000,
+                httpOnly: false,
+              });
+            return res.status(200).send("User Details updated successfully");
+        })
       }
     }
   );

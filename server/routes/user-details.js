@@ -11,18 +11,18 @@ router.get("/:id", async (req, res) => {
     if (err) {
       return res.status(400).send("Error showing user details");
     }
-    return res.status(200).send("Here is the user details!");
+    return res.status(200).json({data: result.rows[0]});
   });
 });
 
 router.post("/:id/create", async (req, res) => {
   const id = req.params.id;
-  const { height, weight, age, gluten, diet_type, allergies } = req.body;
+  const { height, weight, age, favoriteFood, nonFavoriteFood, diet_type, allergies } = req.body;
   const q =
-    "INSERT INTO userDetails (user_id, height, weight, age, gluten, diet_type, allergies) VALUES(($1), ($2), ($3), ($4), ($5), ($6), ($7))";
+    "INSERT INTO userDetails (user_id, age, height, weight,diet_type, allergies,favoriteFood, nonFavoriteFood) VALUES(($1), ($2), ($3), ($4), ($5), ($6), ($7),($8))";
   await db.query(
     q,
-    [id, height, weight, age, gluten, diet_type, allergies],
+    [id, age, height, weight, diet_type, allergies, favoriteFood, nonFavoriteFood],
     (err, result) => {
       if (err) {
         return res.status(400).send("Error creating user details");
