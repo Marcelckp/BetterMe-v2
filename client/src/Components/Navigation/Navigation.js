@@ -53,10 +53,10 @@ function Navigation ({ transition }) {
 
                 { user ?
                     <>
-                        <NavLink to='/summary' className={`${show ? style.link : style.linkTemp}`}>Summary</NavLink>
-                        <NavLink to='/nutrition' className={`${show ? style.link : style.linkTemp}`}>Nutrition</NavLink>
-                        <NavLink to='/mealplan' className={`${show ? style.link : style.linkTemp}`}>Meal Plan</NavLink>
-                        <NavLink to='/profile' className={`${show ? style.link : style.linkTemp}`}>Profile</NavLink>
+                        <NavLink to='/summary' className={({ isActive }) => `${isActive && show ? style.active : ''} ${show ? style.link : style.linkTemp}`}>Summary</NavLink>
+                        <NavLink to='/nutrition' className={({ isActive }) => `${isActive && show ? style.active : ''} ${show ? style.link : style.linkTemp}`}>Nutrition</NavLink>
+                        <NavLink to='/mealplan' className={({ isActive }) => `${isActive && show ? style.active : ''} ${show ? style.link : style.linkTemp}`}>Meal Plan</NavLink>
+                        <NavLink to='/profile' className={({ isActive }) => `${isActive && show ? style.active : ''} ${show ? style.link : style.linkTemp}`}>Profile</NavLink>
                     </>
                 : 
                     <>

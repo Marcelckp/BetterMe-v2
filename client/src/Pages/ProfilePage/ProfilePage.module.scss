@@ -1,0 +1,74 @@
+$cadet: #5d737eff;
+$green-sheen: #64b6acff;
+$celeste: #c0fdfbff;
+$aero-blue: #daffefff;
+$baby-powder: #fcfffdff;
+
+
+$mint-cream: #f4fff8ff;
+$pewter-blue: #8baaadff;
+
+.sideBar {
+    width: 30%;
+    height: 120vh;
+    background-color: $cadet;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+
+    h1 {
+        margin-top: 130px;
+        color: $baby-powder
+    }
+
+    h2 {
+        margin-bottom: 30px;
+        color: $baby-powder
+    }
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+}
+
+.container {
+    margin-top: 100px;
+    width: 70%;
+    padding: 30px;
+}
+
+.image {
+    margin-top: 50px;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 50px;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    div {
+        padding: 20px;
+        cursor: pointer;
+        width: 100%;
+        
+        p {
+            color: $baby-powder;
+            font-size: 1.35rem;
+        }
+    }
+
+    div:hover {
+        background-color: rgb(17, 17, 17, 0.5);
+    }
+}
+
+.active {
+    background-color: rgb(17, 17, 17, 0.5);
+}

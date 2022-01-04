@@ -2,6 +2,9 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
+import Nav from '../../Components/Navigation/Navigation';
+import Footer from '../../Components/Footer/Footer';
+
 function WorkoutPage() {
 
     const navigate = useNavigate();
@@ -13,9 +16,13 @@ function WorkoutPage() {
     })
 
     return (
-        <div>
-            <h1>Hey from the Workout Page</h1>
-        </div>
+        <>
+            <Nav />
+                <div>
+                    
+                </div>
+            <Footer />
+        </>
     )
 }
 
