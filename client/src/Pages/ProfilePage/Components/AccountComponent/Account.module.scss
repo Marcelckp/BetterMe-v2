@@ -55,3 +55,45 @@ $pewter-blue: #8baaadff;
         cursor: pointer;
     }
 }
+
+.account {
+    font-size: .7rem;
+    color: $pewter-blue;
+    padding: 10px 50px;
+    margin-top: 20px;
+    padding-bottom: 30px;
+    border-bottom: 3px solid black;
+
+    h1 {
+        padding: 5px 0;
+        font-weight: normal
+    }
+}
+
+.loadingDiv {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.loader::before {
+    content: "";
+    box-sizing: border-box;
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 12px solid $cadet;
+    border-top-color: transparent;
+    animation: spinner 0.7s linear infinite;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}

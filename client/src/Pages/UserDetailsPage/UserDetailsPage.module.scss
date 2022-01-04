@@ -75,3 +75,21 @@ $celeste: #c0fdfbff;
     color: white;
 
 }
+
+.loader::before {
+    content: "";
+    box-sizing: border-box;
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 12px solid white;
+    border-top-color: transparent;
+    animation: spinner 0.7s linear infinite;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg)
+    }
+}

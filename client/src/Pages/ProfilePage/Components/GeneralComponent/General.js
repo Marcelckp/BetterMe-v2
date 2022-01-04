@@ -1,7 +1,12 @@
-import { useRef } from 'react';
+import axios from 'axios';
+import { useEffect, useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
 import style from './General.module.scss';
 
 function General() {
+
+    const user = useSelector(state => state.user.user);
+    const [userDetails, setUserDetails] = useState(null);
 
     const Diet = useRef(null);
     const Age = useRef(null);
@@ -11,6 +16,18 @@ function General() {
     const Hated = useRef(null);
     const Favourite = useRef(null);
 
+    useEffect(() => {
+        if (user) {
+            axios.get(`http://localhost:4000/userDetails/${user.user_id}`)
+                .then((res) => {
+                    setUserDetails(res.data.data)
+                })
+                .catch((err) => console.log(err))
+        }
+    }, [user])
+
+    console.log(userDetails)
+
     return (
         <div className={style.main}>
             <h1>Welcome to Account settings</h1>
@@ -18,6 +35,25 @@ function General() {
             <p>Change your account information</p>
             <br />
             <div className={style.container}>
+
+                { userDetails ? 
+                    <div className={style.account}>
+                        <h1> Current Age: { userDetails && userDetails.age}</h1>
+                        <h1> Current Height: { userDetails && userDetails.height }</h1>
+                        <h1> Current Weight: {userDetails && userDetails.weight}</h1>
+                        <h1> Current Allergies: {userDetails && userDetails.allergies}</h1>
+                        <h1> Current Diet: {userDetails && userDetails.diet_type}</h1>
+                        <h1> Current Favourite Food: {userDetails && userDetails.favoritefood}</h1>
+                        <h1> Current Hated Food: { userDetails && userDetails.nonfavoritefood}</h1>
+                    </div>
+                : 
+
+                    <div className={style.account}>
+                        <h1>You have no user details as yet, why not create some!</h1>
+                    </div> 
+
+                }
+
                 <form className={style.content}>
                     <label htmlFor="">Age</label>
                     <br />

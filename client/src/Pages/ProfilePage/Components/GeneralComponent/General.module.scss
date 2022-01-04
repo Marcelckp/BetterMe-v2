@@ -55,3 +55,17 @@ $pewter-blue: #8baaadff;
         cursor: pointer;
     }
 }
+
+.account {
+    font-size: .7rem;
+    color: $pewter-blue;
+    padding: 10px 50px;
+    margin-top: 20px;
+    padding-bottom: 30px;
+    border-bottom: 3px solid black;
+
+    h1 {
+        padding: 5px 0;
+        font-weight: normal
+    }
+}

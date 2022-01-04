@@ -13,18 +13,18 @@ function SearchItemPage() {
 
     const { id } = useParams();
 
-    // const [item, setItem] = useState(null);
+    const [item, setItem] = useState(null);
 
-    // useEffect(() => {
-    //     axios.get(`https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&apiKey=a55ef03413ed41f996c002316020cdde`)
-    //         .then(res => {
-    //             localStorage.setItem('item', JSON.stringify(res.data));
-    //             setItem(res.data)
-    //         })
-    //         .catch(err => console.log(err));
-    // }, [id])
+    useEffect(() => {
+        axios.get(`https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&apiKey=a55ef03413ed41f996c002316020cdde`)
+            .then(res => {
+                localStorage.setItem('item', JSON.stringify(res.data));
+                setItem(res.data)
+            })
+            .catch(err => console.log(err));
+    }, [id])
 
-    const item = JSON.parse(localStorage.getItem('item'));
+    // const item = JSON.parse(localStorage.getItem('item'));
     console.log(item);
 
     const user = useSelector(state => state.user.user);

@@ -17,21 +17,21 @@ function SearchPage() {
 
     const [data, setData] = useState(biscuit || null);
 
-    // useEffect(() => {
-    //     // effect
-    //     if (!localStorage.getItem('searchFetch')) {
-    //         axios.get('https://api.spoonacular.com/recipes/complexSearch?apiKey=a55ef03413ed41f996c002316020cdde&number=50')
-    //             .then(res => {
-    //                 console.log(res.data)
-    //                 localStorage.setItem('searchFetch', JSON.stringify(res.data));
-    //                 setData(res.data.results);
-    //             })
-    //             .catch(err => console.log(err))
-    //         return () => {
-    //             // cleanup
-    //         }
-    //     }
-    // }, []);
+    useEffect(() => {
+        // effect
+        if (!localStorage.getItem('searchFetch')) {
+            axios.get('https://api.spoonacular.com/recipes/complexSearch?apiKey=a55ef03413ed41f996c002316020cdde&number=50')
+                .then(res => {
+                    console.log(res.data)
+                    localStorage.setItem('searchFetch', JSON.stringify(res.data));
+                    setData(res.data.results);
+                })
+                .catch(err => console.log(err))
+            return () => {
+                // cleanup
+            }
+        }
+    }, []);
 
     // console.log(biscuit, data)
 

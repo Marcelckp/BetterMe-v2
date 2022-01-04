@@ -20,7 +20,7 @@ function ProfilePage() {
     const [active, setActive] = useState('General');
 
     useEffect(()=> {
-        if(!user) navigate('/signup');
+        if (!user) navigate('/signup');
     });
 
     console.log(user);

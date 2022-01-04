@@ -13,19 +13,22 @@ import ProfilePage from './Pages/ProfilePage/ProfilePage';
 import NutritionPage from './Pages/NutritionPage/NutritionPage';
 import SearchItemPage from './Pages/SearchItemPage/SearchItemPage';
 import UserDetailsPage from './Pages/UserDetailsPage/UserDetailsPage';
+import ExercisePage from './Pages/ExercisePage/ExercisePage';
+import ScrollToTop from './Components/ScrollToTop';
 
 function App() {
 
 
   return (
       <div className="App">
-        
         <Router>
+            {/* Tweek the scroll behaviour in the index.css file to get a smooth scrolling animation */}
+            <ScrollToTop />
           <Routes>
-            
             <Route path='/' element={<HomePage />} />
             <Route path='/search' element={<SearchPage />} />
             <Route path='/search/:id' element={<SearchItemPage />} />
+            <Route path='/exercise' element={<ExercisePage />} />
 
             <Route path='/summary' element={<SummaryPage />} />
             <Route path='/profile' element={<ProfilePage />} />
