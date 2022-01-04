@@ -1,0 +1,57 @@
+$cadet: #5d737eff;
+$green-sheen: #64b6acff;
+$celeste: #c0fdfbff;
+$aero-blue: #daffefff;
+$baby-powder: #fcfffdff;
+
+
+$mint-cream: #f4fff8ff;
+$pewter-blue: #8baaadff;
+
+.main {
+    p {
+        color: $pewter-blue;
+        font-size: 1.25em;
+    }
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    background-color: white
+}
+
+.content {
+    padding: 50px;
+
+    h1 {
+        font-size: 3.5em;
+    }
+
+    label {
+        font-weight: bold;
+        font-size: 1.4em;
+    }
+
+    input {
+        padding: 20px;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(17, 17, 17, 0.1)
+    }
+
+    button {
+        width: 100%;
+        padding: 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: #5d737eff;
+        color: white;
+        font-weight: bold;
+        font-size: 15px;
+        cursor: pointer;
+    }
+}

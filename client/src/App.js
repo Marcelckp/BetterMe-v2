@@ -12,6 +12,7 @@ import SummaryPage from './Pages/SummaryPage/SummaryPage';
 import ProfilePage from './Pages/ProfilePage/ProfilePage';
 import NutritionPage from './Pages/NutritionPage/NutritionPage';
 import SearchItemPage from './Pages/SearchItemPage/SearchItemPage';
+import UserDetailsPage from './Pages/UserDetailsPage/UserDetailsPage';
 
 function App() {
 
@@ -34,7 +35,8 @@ function App() {
 
             <Route path='/signup' element={<SignUpPage />} />
             <Route path='/login' element={<LoginPage />} />
-            <Route path='/preferences' element={<preferencesPage />} />
+
+            <Route path='/userdetails' element={<UserDetailsPage />} />
 
             <Route path='/error' element={<ErrorPage />} />
             <Route path='*' element={<NotFoundPage />} />

@@ -38,3 +38,224 @@ $pewter-blue: #8baaadff;
     font-size: 5em;
     font-weight: bolder;
 }
+
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    background-color: $baby-powder
+}
+
+.container {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+}
+
+.headTitle {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-right: 50px;
+    color: $cadet;
+
+    button {
+        width: 50%;
+        padding: 15px 20px;
+        border-radius: 15px;
+        margin-top: 40px;
+        border: none;
+        border: 3px solid $green-sheen;
+        background-color: transparent;
+        font-size: 1.125em;
+        font-weight: bold;
+        color: $green-sheen;
+        cursor: pointer;
+        transition: all 0.4s ease-in-out
+    }
+
+    button:hover {
+        transform: translateY(-5px);
+        color: $baby-powder;
+        background-color: $green-sheen;
+        transition: all 0.4s ease-in-out;
+    }
+}
+
+.headBlur {
+    width: 80%;
+    font-size: .8em;
+    color: $cadet;
+}
+
+.bottomHero {
+    width: 100%;
+    height: 350px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 150px;
+}
+
+.imageContainer {
+    width: 100%;
+    background-color: rgb(100, 182, 172, 0.3);
+    margin-top: 200px;
+    height: 600px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 500px;
+}
+
+.imageContent {
+    position: absolute;
+    bottom: -250px;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 800px
+}
+
+.imageInfo {
+    margin-top: -110px;
+    text-align: center;
+    h3 {
+        padding: 10px;
+        color: rgb(93, 115, 126, 0.8)
+    }
+    p {
+        padding: 10px;
+        font-size: 2em;
+        font-weight: bold;
+    }
+
+    h2 {
+        padding: 10px;
+        font-size: 1em;
+        color: rgb(93, 115, 126, 0.8)
+    }
+
+    button {
+        padding: 15px 50px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 15px;
+        background-color: transparent;
+        border: 3px solid $cadet;
+        cursor: pointer;
+        font-size: 1.125em;
+        font-weight: bold;
+        color: $cadet;
+        transition: all 0.4s ease-in-out;
+    }
+
+    button:hover {
+        transform: translateY(-5px);
+        color: white;
+        background-color: $cadet;
+        transition: all 0.4s ease-in-out;
+    }
+
+}
+
+.pitch {
+    width: 100%
+}
+
+.pitchContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.pitchImg {
+    height: 600px;
+    width: 30%;
+    background-size: cover;
+}
+
+.pitch1 {
+    padding: 20px;
+    width: 60%;
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    p {
+        font-size: 1.4em
+    }
+}
+
+.infoDiv {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 90%;
+
+    h1 {
+        color: rgb(93, 115, 126, 0.6);
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 2.5em;
+        font-weight: bold;
+        padding: 5px
+    }
+}
+
+.infoContent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.teamContainer {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        font-size: 2.2em;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1.25em;
+        color: $cadet;
+        margin-bottom: 10px;
+    }
+}
+
+.team {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.teamCol1 {
+    // margin-right: 50px;
+    text-align: right;
+    margin-left: -120px;
+    margin-right: 40px
+}
+
+.teamCol2 {
+    // margin-left: 50px
+}

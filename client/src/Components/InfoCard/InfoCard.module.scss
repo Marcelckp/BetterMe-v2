@@ -1,0 +1,76 @@
+.Card {
+    width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+.svgSection {
+    margin-right: 20px
+}
+
+.svgDiv {
+    width: fit-content;
+    background-color: red;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.searchDiv {
+    background-color: rgb(196, 196, 196);
+}
+
+.gymDiv {
+    background-color: rgb(0, 128, 0, 0.5)
+}
+
+.healthDiv {
+    background-color: rgb(245, 75, 188, 0.5)
+}
+
+.plannerDiv {
+    background-color :rgba(0, 0, 255, 0.5)
+}
+
+.nutritionDiv {
+    background-color: rgba(240, 128, 128, 0.6);
+}
+
+.search {
+    color: white;
+}
+
+.gym {
+    color: green
+}
+
+.health {
+    color: rgb(245, 75, 188)
+}
+
+.planner {
+    color: blue
+}
+
+.nutrition {
+    color: rgb(253, 80, 80);
+}
+
+.info {
+
+    width: 100%;
+
+    h1 {
+        color: black;
+        font-weight: bold;
+    }
+
+    p {
+        font-size: 1em;
+        color: #5d737eff;
+        font-weight: normal;
+    }
+
+}
